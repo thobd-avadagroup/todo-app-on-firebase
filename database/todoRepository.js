@@ -41,7 +41,6 @@ async function update(id, data) {
     await db.collection(collectionName)
         .doc(id)
         .update({
-          ...document.data(),
           ...data,
           updatedAt: FieldValue.serverTimestamp(),
         });
